@@ -1,12 +1,12 @@
 package com.example.customerservice.query.service;
 
-import com.example.customerservice.commonapi.events.CustomerCreatedEvent;
-import com.example.customerservice.commonapi.queries.GetAllCustomersQuery;
-import com.example.customerservice.commonapi.queries.GetCustomerByIdQuery;
 import com.example.customerservice.query.entities.Customer;
 import com.example.customerservice.query.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ma.enset.events.CustomerCreatedEvent;
+import ma.enset.queries.GetAllCustomersQuery;
+import ma.enset.queries.GetCustomerByIdQuery;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Service;

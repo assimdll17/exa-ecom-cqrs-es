@@ -1,8 +1,8 @@
 package ma.enset.inventoryservice.commands.controllers;
 
 import lombok.AllArgsConstructor;
-import ma.enset.commands.CreateCategoryCommand;
-import ma.enset.dtos.CreateCategoryRequestDTO;
+import ma.enset.commands.CreateProductCommand;
+import ma.enset.dtos.CreateProductRequestDTO;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.springframework.http.HttpStatus;
@@ -14,19 +14,22 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("/commands/category")
+@RequestMapping("/commands/product")
 @AllArgsConstructor
-public class CategoryCommandController {
+public class ProductCommandController {
 
     private CommandGateway commandGateway;
     private EventStore eventStore;
 
     @PostMapping("/create")
-    public CompletableFuture<String> createProduct(@RequestBody CreateCategoryRequestDTO request) {
-        CompletableFuture<String> commandResponse = commandGateway.send(new CreateCategoryCommand(
+    public CompletableFuture<String> createProduct(@RequestBody CreateProductRequestDTO request) {
+        CompletableFuture<String> commandResponse = commandGateway.send(new CreateProductCommand(
                 UUID.randomUUID().toString(),
                 request.getName(),
-                request.getDescription()
+                request.getPrice(),
+                request.getQuantity(),
+                request.getStatus(),
+                request.getCategoryId()
         ));
         return commandResponse;
     }
@@ -39,7 +42,7 @@ public class CategoryCommandController {
         return entity;
     }
 
-    @GetMapping("/eventStore/{categoryId}")
+    @GetMapping("/eventStore/{productId}")
     public Stream evenStore(@PathVariable String accountId) {
         return eventStore.readEvents(accountId).asStream();
     }

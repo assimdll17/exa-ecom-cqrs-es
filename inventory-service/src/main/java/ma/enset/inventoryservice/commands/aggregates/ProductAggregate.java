@@ -1,8 +1,9 @@
 package ma.enset.inventoryservice.commands.aggregates;
 
-import ma.enset.inventoryservice.commonapi.commands.CreateProductCommand;
-import ma.enset.inventoryservice.commonapi.enums.ProductStatus;
-import ma.enset.inventoryservice.commonapi.events.ProductCreatedEvent;
+import ma.enset.commands.CreateProductCommand;
+import ma.enset.enums.ProductStatus;
+import ma.enset.events.ProductCreatedEvent;
+
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -32,7 +33,7 @@ public class ProductAggregate {
                 createProductCommand.getName(),
                 createProductCommand.getPrice(),
                 createProductCommand.getQuantity(),
-                ProductStatus.DISPONIBLE,
+                ProductStatus .DISPONIBLE,
                 createProductCommand.getCategoryId()
         ));
     }

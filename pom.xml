@@ -6,6 +6,7 @@
     <modules>
         <module>customer-service</module>
         <module>inventory-service</module>
+        <module>common-api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

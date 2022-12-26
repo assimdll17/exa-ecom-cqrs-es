@@ -1,7 +1,7 @@
 package ma.enset.inventoryservice.commands.aggregates;
 
-import ma.enset.inventoryservice.commonapi.commands.CreateCategoryCommand;
-import ma.enset.inventoryservice.commonapi.events.CategoryCreatedEvent;
+import ma.enset.commands.CreateCategoryCommand;
+import ma.enset.events.CategoryCreatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

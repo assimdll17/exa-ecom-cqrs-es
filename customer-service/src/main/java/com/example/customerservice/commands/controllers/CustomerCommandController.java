@@ -1,8 +1,9 @@
 package com.example.customerservice.commands.controllers;
 
-import com.example.customerservice.commonapi.commands.CreateCustomerCommand;
-import com.example.customerservice.commonapi.dtos.CreateCustomerRequestDTO;
+
 import lombok.AllArgsConstructor;
+import ma.enset.commands.CreateCustomerCommand;
+import ma.enset.dtos.CreateCustomerRequestDTO;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.springframework.http.HttpStatus;

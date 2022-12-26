@@ -1,7 +1,8 @@
 package com.example.customerservice.commands.aggregates;
 
-import com.example.customerservice.commonapi.commands.CreateCustomerCommand;
-import com.example.customerservice.commonapi.events.CustomerCreatedEvent;
+
+import ma.enset.commands.CreateCustomerCommand;
+import ma.enset.events.CustomerCreatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
